@@ -1,0 +1,20 @@
+services:
+  rabbitmq:
+    container_name: flask_celery_rabbitmq
+    image: 'rabbitmq:3-management'
+    ports:
+      - '5672:5672' # RabbitMQ server
+      - '15672:15672' # RabbitMQ management UI
+    environment:
+      - TZ=Asia/Jakarta
+
+  mongodb:
+    container_name: flask_celery_db
+    image: 'mongo:latest'
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: aselole
+      MONGO_INITDB_ROOT_PASSWORD: secret123
+    volumes:
+      - ./docker/mongodb:/data/db

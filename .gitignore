@@ -13,7 +13,7 @@ __pycache__/
 venv/
 
 # configuration
-config*.py
+config.py
 
 # docker
 .docker
